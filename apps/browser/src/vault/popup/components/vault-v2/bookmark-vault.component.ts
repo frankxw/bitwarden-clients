@@ -34,8 +34,8 @@ enum VaultState {
 }
 
 @Component({
-  selector: "app-vault",
-  templateUrl: "vault-v2.component.html",
+  selector: "app-bookmark-vault",
+  templateUrl: "bookmark-vault.component.html",
   standalone: true,
   imports: [
     PopupPageComponent,
@@ -55,7 +55,7 @@ enum VaultState {
   ],
   providers: [VaultUiOnboardingService],
 })
-export class VaultV2Component implements OnInit, OnDestroy {
+export class BookmarkVaultComponent implements OnInit, OnDestroy {
   cipherType = CipherType;
 
   protected favoriteCiphers$ = this.vaultPopupItemsService.favoriteCiphers$;

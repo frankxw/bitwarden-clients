@@ -1,7 +1,7 @@
 import { inject } from "@angular/core";
 import { CanDeactivateFn } from "@angular/router";
 
-import { VaultV2Component } from "../popup/components/vault-v2/vault-v2.component";
+import { BookmarkVaultComponent } from "../popup/components/vault-v2/bookmark-vault.component";
 import { VaultPopupItemsService } from "../popup/services/vault-popup-items.service";
 import { VaultPopupListFiltersService } from "../popup/services/vault-popup-list-filters.service";
 
@@ -9,8 +9,8 @@ import { VaultPopupListFiltersService } from "../popup/services/vault-popup-list
  * Guard to clear the vault state (search and filter) when navigating away from the vault view.
  * This ensures the search and filter state is reset when navigating between different tabs, except viewing a cipher.
  */
-export const clearVaultStateGuard: CanDeactivateFn<VaultV2Component> = (
-  component: VaultV2Component,
+export const clearVaultStateGuard: CanDeactivateFn<BookmarkVaultComponent> = (
+  component: BookmarkVaultComponent,
   currentRoute,
   currentState,
   nextState,

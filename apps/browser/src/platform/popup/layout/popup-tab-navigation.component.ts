@@ -17,22 +17,10 @@ import { LinkModule } from "@bitwarden/components";
 export class PopupTabNavigationComponent {
   navButtons = [
     {
-      label: "vault",
+      label: "bookmark",
       page: "/tabs/vault",
-      iconKey: "lock",
-      iconKeyActive: "lock-f",
-    },
-    {
-      label: "generator",
-      page: "/tabs/generator",
-      iconKey: "generate",
-      iconKeyActive: "generate-f",
-    },
-    {
-      label: "send",
-      page: "/tabs/send",
-      iconKey: "send",
-      iconKeyActive: "send-f",
+      iconKey: "folder",
+      iconKeyActive: "folder",
     },
     {
       label: "settings",

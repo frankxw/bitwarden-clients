@@ -96,8 +96,8 @@ import { clearVaultStateGuard } from "../vault/guards/clear-vault-state.guard";
 import { AddEditV2Component } from "../vault/popup/components/vault-v2/add-edit/add-edit-v2.component";
 import { AssignCollections } from "../vault/popup/components/vault-v2/assign-collections/assign-collections.component";
 import { AttachmentsV2Component } from "../vault/popup/components/vault-v2/attachments/attachments-v2.component";
+import { BookmarkVaultComponent } from "../vault/popup/components/vault-v2/bookmark-vault.component";
 import { PasswordHistoryV2Component } from "../vault/popup/components/vault-v2/vault-password-history-v2/vault-password-history-v2.component";
-import { VaultV2Component } from "../vault/popup/components/vault-v2/vault-v2.component";
 import { ViewV2Component } from "../vault/popup/components/vault-v2/view-v2/view-v2.component";
 import { AppearanceV2Component } from "../vault/popup/settings/appearance-v2.component";
 import { FoldersV2Component } from "../vault/popup/settings/folders-v2.component";
@@ -705,7 +705,7 @@ const routes: Routes = [
       },
       {
         path: "vault",
-        component: VaultV2Component,
+        component: BookmarkVaultComponent,
         canActivate: [authGuard, NewDeviceVerificationNoticeGuard],
         canDeactivate: [clearVaultStateGuard],
         data: { elevation: 0 } satisfies RouteDataProperties,

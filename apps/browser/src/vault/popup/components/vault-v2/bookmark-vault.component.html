@@ -1,5 +1,5 @@
 <popup-page [loading]="loading$ | async" disablePadding>
-  <popup-header slot="header" [pageTitle]="'vault' | i18n">
+  <popup-header slot="header" [pageTitle]="'bookmark' | i18n">
     <ng-container slot="end">
       <app-new-item-dropdown [initialValues]="newItemItemValues$ | async"></app-new-item-dropdown>
 
@@ -41,27 +41,11 @@
       </bit-no-items>
     </div>
 
-    <!-- For better consistency with screen readers, the role/aria needs to be on an element that isn't dynamic by *ngIf -->
-    <div role="status" aria-live="polite">
-      <div
-        *ngIf="vaultState === VaultStateEnum.DeactivatedOrg"
-        class="tw-flex tw-flex-col tw-justify-center tw-h-auto tw-pt-12"
-      >
-        <bit-no-items [icon]="deactivatedIcon">
-          <ng-container slot="title">
-            {{ "organizationIsDeactivated" | i18n }}
-          </ng-container>
-          <ng-container slot="description">{{ "contactYourOrgAdmin" | i18n }}</ng-container>
-        </bit-no-items>
-      </div>
-    </div>
-
     <div
       *ngIf="vaultState === null"
       cdkVirtualScrollingElement
       class="tw-h-full tw-p-3 bit-compact:tw-p-2 tw-styled-scrollbar"
     >
-      <app-autofill-vault-list-items></app-autofill-vault-list-items>
       <app-vault-list-items-container
         [title]="'favorites' | i18n"
         [ciphers]="favoriteCiphers$ | async"
