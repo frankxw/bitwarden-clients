@@ -177,26 +177,6 @@ export class VaultPopupListFiltersService {
       label: this.i18nService.t("typeLogin"),
       icon: "bwi-globe",
     },
-    {
-      value: CipherType.Card,
-      label: this.i18nService.t("typeCard"),
-      icon: "bwi-credit-card",
-    },
-    {
-      value: CipherType.Identity,
-      label: this.i18nService.t("typeIdentity"),
-      icon: "bwi-id-card",
-    },
-    {
-      value: CipherType.SecureNote,
-      label: this.i18nService.t("note"),
-      icon: "bwi-sticky-note",
-    },
-    {
-      value: CipherType.SshKey,
-      label: this.i18nService.t("typeSshKey"),
-      icon: "bwi-key",
-    },
   ];
 
   /** Resets `filterForm` to the original state */
@@ -303,6 +283,16 @@ export class VaultPopupListFiltersService {
             // Move the "no folder" option to the end of the list
             arrangedFolders = [...folders.filter((f) => f.id !== null), updatedNoFolder];
           }
+
+          // Specifically we only care about any Bookmarks/
+          console.log("1");
+          let test1 = folders.map(f => f.name);
+          console.log(test1);
+          arrangedFolders = arrangedFolders.filter(f => f.name.startsWith('Bookmarks/'));
+          console.log("2");
+          let test2 = arrangedFolders.map(f => f.name);
+          console.log(test2);
+
           return [filters, arrangedFolders, cipherViews];
         }),
         map(([filters, folders, cipherViews]) => {

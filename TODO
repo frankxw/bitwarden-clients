@@ -1,0 +1,8 @@
+TODO:
+- Change +New to Add Bookmark
+- Remove settings that don't make sense
+- Remove "Types" filter and default it to logins
+- Add check for Bookmark/ folder
+- Only show logins from the Bookmark/ folder
+- Change item elements to only be launchable
+- Add bar for extra functionality
